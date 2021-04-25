@@ -1,0 +1,99 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+
+    ///////////Spring/////////////
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-core
+    // SPRING CORE: Inversion of Control (IOC)
+    implementation group: 'org.springframework', name: 'spring-core', version: '5.3.5'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-beans
+    // SPRING BEANS: Dependency Injection (DI)
+    implementation group: 'org.springframework', name: 'spring-beans', version: '5.3.5'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+    // SPRING CONTEXT: Annotations & Package scanning
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.5'
+
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-orm
+    // SPRING ORM, provides the ORM tools THIS IS NOT AN ORM FRAMEWORK!!!....it's a module
+    //      of spring that HAPPENS to puppet Hibernate for us
+    implementation group: 'org.springframework', name: 'spring-orm', version: '5.3.5'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+    // SPRING MVC, provides web tools
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.3.5'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-websocket
+    //SPRING WEBSOCKETS
+    implementation group: 'org.springframework', name: 'spring-websocket', version: '5.3.5'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-messaging
+    //SPRING MESSAGING
+    implementation group: 'org.springframework', name: 'spring-messaging', version: '5.3.5'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-aspects
+    // SPRING ASPECTS
+    implementation group: 'org.springframework', name: 'spring-aspects', version: '5.3.5'
+
+    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-core
+    //SPRING SECURITY
+    implementation group: 'org.springframework.security', name: 'spring-security-core', version: '5.4.5'
+
+    ///////////Hibernate///////////
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    //HIBERNATE CORE
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.30.Final'
+
+
+    ///////////Other///////////
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    //POSTGRESQL DRIVER
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.19'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    // JACKSON DATABIND
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.2'
+
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    // JAVA SERVLET API
+    // This is necessary for tomcat to utilize java servlets
+    implementation group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+
+    // https://mvnrepository.com/artifact/log4j/log4j
+    implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+
+    ////////////Tests/////////////
+    // https://mvnrepository.com/artifact/org.mockito/mockito-all
+    testImplementation group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+
+    // https://mvnrepository.com/artifact/com.h2database/h2
+    testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+
+    // https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-core
+        implementation group: 'com.amazonaws', name: 'aws-java-sdk-core', version: '1.11.998'
+
+
+    // https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3
+        implementation group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.11.997'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}

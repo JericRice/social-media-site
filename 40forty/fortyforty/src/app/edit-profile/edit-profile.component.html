@@ -1,0 +1,131 @@
+<!-- 
+<div class="limiter">
+<div class="container-login100">
+    <div class="wrap-login100">
+        <div class="login100-pic js-tilt" data-tilt>
+
+        </div>
+
+        <form class="login100-form validate-form">
+            <span class="login100-form-title">
+                Edit Profile
+            </span>
+            
+            <div class="wrap-input100 validate-input" for="exampleInputEmail1" data-validate = "Email is required">
+              <input class="input100" id="exampleInputEmail1" type="email" [(ngModel)]='email' name="email" placeholder="Email Address">
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                </span>
+            </div>
+
+
+            <div class="wrap-input100 validate-input" for="exampleInputUsername1">
+                <input class="input100" type="text" [(ngModel)]='username' name="username" placeholder="Username">
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Password is required">
+                <input class="input100" id="exampleInputPassword1" type="password" [(ngModel)]='password' name="password" placeholder="Password">
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                </span>
+            </div>
+
+            <div class="wrap-input100">
+              <input class="input100" id="exampleInputPassword2" type="password" [(ngModel)]='confirm_pass' name="confirm_pass" placeholder="Confirm Password">
+              <span class="focus-input100"></span>
+              <span class="symbol-input100">
+                  <i class="fa fa-lock" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <div class="wrap-input100">
+              <input class="input100" id="exampleInputFirstname" type="text" [(ngModel)]='firstname' name="firstname" placeholder="First Name">
+              <span class="focus-input100"></span>
+              <span class="symbol-input100">
+                  <i class="fa fa-address-card" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <div class="wrap-input100">
+              <input class="input100" id="exampleInputLastname" type="text" [(ngModel)]='lastname' name="lastname" placeholder="Last Name">
+              <span class="focus-input100"></span>
+              <span class="symbol-input100">
+                  <i class="fa fa-address-card" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <div class="wrap-input100">
+              <input class="input100" id="exampleInputGender" type="text" [(ngModel)]='gender' name="gender" placeholder="Gender">
+              <span class="focus-input100"></span>
+              <span class="symbol-input100">
+                  <i class="fa fa-transgender-alt" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <div class="wrap-input100">
+              <input class="input100" id="exampleInputBirthday" type="date" [(ngModel)]='birthday' name="birthday" placeholder="Birthday">
+              <span class="focus-input100"></span>
+              <span class="symbol-input100">
+                  <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+              </span>
+            </div>
+            
+            <div class="container-login100-form-btn">
+              <button type="submit" class="login100-form-btn" (click)="onPress()">Update</button>
+            </div>
+
+         </form>
+    </div>
+</div>
+</div> -->
+
+
+
+<form (ngSubmit)="onSubmmit()">
+  <div class="limiter">
+  <div class="container-login100">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault03">Enter Current Username</label>
+      <input type="text" class="form-control" id="validationDefault03"  [(ngModel)]='username' name="username" placeholder="username" value="Username" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault04">Enter Current Password</label>
+      <input type="password" class="form-control" id="validationDefault04"  [(ngModel)]='password' name="password" placeholder="Password" value="Password" required>
+    </div>
+    <br>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault01">First name</label>
+      <input type="text" class="form-control" id="validationDefault01" [(ngModel)]='firstName' name="firstName" placeholder="First name" value="First Name" required>
+    </div>
+    <br>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault02">Last name</label>
+      <input type="text" class="form-control" id="validationDefault02" [(ngModel)]='lastName' name="lastName" placeholder="Last name" value="Last Name" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault02">Gender</label>
+      <input type="text" class="form-control" id="validationDefault02" [(ngModel)]='gender' name="gender" placeholder="Gender" value="Gender" required>
+    </div>
+    <br>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefaultUsername">Email </label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend2">@</span>
+        </div>
+        <input type="text" class="form-control" id="validationDefaultUsername" [(ngModel)]='email' name="email" placeholder="email" aria-describedby="inputGroupPrepend2" value="email" required>
+</div>
+    </div>
+    <br>
+  </div>
+  </div>
+</div>
+  <button class="btn btn-warning" type="submit">Submit form</button>
+</form>

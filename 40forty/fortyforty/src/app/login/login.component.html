@@ -1,0 +1,67 @@
+<!-- <div class="card container align-self-center" style="width: 18rem;">
+    <img src="https://image.freepik.com/free-vector/coming-soon-with-megaphone-design_1017-26689.jpg" class="card-img-top" alt="...">
+    <div class="card-body border-secondary">
+        <h5 class="card-title">Log In</h5>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Username</label> <input type="text" [(ngModel)]='username' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" name="username">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label> <input type="password" [(ngModel)]='password' class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+            </div>
+            <div>
+                <a class="nav-link" routerLink="/forgot">Forgot Password? </a>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+              Submit</button>
+        </form>
+        <a class="nav-link" [routerLink]="['/register']">Register</a>
+    </div>
+</div> -->
+
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="../../assets/logo.png" alt="IMG">
+            </div>
+
+            <form (ngSubmit)="onSubmit()"class="login100-form validate-form">
+                <span class="login100-form-title">
+                    Member Login
+                </span>
+
+                <div class="wrap-input100 validate-input" for="exampleInputEmail1">
+                    <input class="input100" type="text" [(ngModel)]='username' name="username" placeholder="Username">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                    <input class="input100" id="exampleInputPassword1" type="password" [(ngModel)]='password' name="password" placeholder="Password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                </div>
+                
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">
+                        Login
+                    </button>
+                </div>
+
+                <div class="text-center p-t-12">
+                    <a class="nav-link" routerLink="/forgot">Forgot Password? </a>
+                </div>
+                <div class="text-center p-t-136">
+                    <a class="nav-link" [routerLink]="['/register']">Register</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

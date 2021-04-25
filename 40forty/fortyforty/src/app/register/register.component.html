@@ -1,0 +1,130 @@
+<!-- <h5 *ngIf="fail">Username Already Taken</h5>
+<div class="card container align-self-center" style="width: 24rem;">
+  <div class="card-body border-secondary">
+    <h5 class="card-title">Create Account</h5>
+    <form>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" [(ngModel)]='username' name="username">
+      </div>
+      <div class="form-group">
+        <label for="Password">Password</label>
+        <input type="password" class="form-control" [(ngModel)]='password' name="password">
+      </div>
+      <div class="form-group">
+        <label for="Confirm password">Confirm password</label>
+        <input type="password" class="form-control" [(ngModel)]='confirm_pass' name="confirm_pass">
+      </div>
+      <div class="form-group">
+        <label for="Firstname">Firstname</label>
+        <input type="text" class="form-control" [(ngModel)]='firstname' name="firstname">
+      </div>
+      <div class="form-group">
+        <label for="Lastname">Lastname</label>
+        <input type="text" class="form-control" [(ngModel)]='lastname' name="lastname">
+      </div>
+      <div class="form-group">
+        <label for="Email address">Email address</label>
+        <input type="email" class="form-control" [(ngModel)]='email' name="email">
+      </div>
+      <div class="form-group">
+        <label for="File">Profile image</label>
+        <input type="file" class="form-control-file" id="FileUp" (change)="onFileSelected($event)">
+      </div>
+      <button type="submit" class="btn" (click)="onPress()">Submit</button>
+    </form>
+  </div>
+</div> -->
+
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="../../assets/logo.png" alt="IMG">
+            </div>
+
+            <form class="login100-form validate-form">
+                <span class="login100-form-title">
+                    Create Account
+                </span>
+                
+                <div class="wrap-input100 validate-input" for="exampleInputEmail1" data-validate = "Email is required">
+                  <input class="input100" id="exampleInputEmail1" type="email" [(ngModel)]='email' name="email" placeholder="Email Address">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <h5 *ngIf="fail">Username Already Taken</h5>
+                <div class="wrap-input100 validate-input" for="exampleInputUsername1">
+                    <input class="input100" type="text" [(ngModel)]='username' name="username" placeholder="Username">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <input class="input100" id="exampleInputPassword1" type="password" [(ngModel)]='password' name="password" placeholder="Password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="wrap-input100">
+                  <input class="input100" id="exampleInputPassword2" type="password" [(ngModel)]='confirm_pass' name="confirm_pass" placeholder="Confirm Password">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                      <i class="fa fa-lock" aria-hidden="true"></i>
+                  </span>
+                </div>
+
+                <div class="wrap-input100">
+                  <input class="input100" id="exampleInputFirstname" type="text" [(ngModel)]='firstname' name="firstname" placeholder="First Name">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                      <i class="fa fa-address-card" aria-hidden="true"></i>
+                  </span>
+                </div>
+
+                <div class="wrap-input100">
+                  <input class="input100" id="exampleInputLastname" type="text" [(ngModel)]='lastname' name="lastname" placeholder="Last Name">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                      <i class="fa fa-address-card" aria-hidden="true"></i>
+                  </span>
+                </div>
+
+                <div class="wrap-input100">
+                  <input class="input100" id="exampleInputGender" type="text" [(ngModel)]='gender' name="gender" placeholder="Gender">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                      <i class="fa fa-transgender-alt" aria-hidden="true"></i>
+                  </span>
+                </div>
+
+                <div class="wrap-input100">
+                  <input class="input100" id="exampleInputBirthday" type="date" [(ngModel)]='birthday' name="birthday" placeholder="Birthday">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                      <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                  </span>
+                </div>
+                
+                <div class="container-login100-form-btn">
+                  <button type="submit" class="login100-form-btn" (click)="onPress()">Submit</button>
+                </div>
+
+                <div class="text-center p-t-12">
+                    <a class="nav-link" routerLink="/login">Back to login?</a>
+                </div>
+                <!-- <div class="text-center p-t-136">
+                    <a class="nav-link" [routerLink]="['/register']">Register</a>
+                </div> -->
+            </form>
+        </div>
+    </div>
+</div>

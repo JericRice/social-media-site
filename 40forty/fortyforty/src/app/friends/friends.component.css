@@ -1,0 +1,9 @@
+* {
+    border: none;
+    border-radius: 10px;
+    
+}
+body {
+    background-color: #d68d8e;
+    background-image: linear-gradient(315deg, #ecbcbd 0%, #fbd72b 74%);
+  }

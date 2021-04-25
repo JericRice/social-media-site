@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <app-side-bar></app-side-bar>
+        </div>
+        <div class="card" style="width: 30rem;">
+            <img src="{{user.picture}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <!-- <h4 class="card-title">Welcome {{user.firstname}}</h4> --> 
+                <p class="card-text"></p>
+            </div>
+            <ul class="list-group list-group-flush profile-bg" (load)='ProfileClick()'>
+                <li class="list-group-item">Username: {{user.username}}</li>
+                <li class="list-group-item">First Name: {{user.firstName}}</li>
+                <li class="list-group-item">Last Name: {{user.lastName}}</li>
+                <li class="list-group-item">Gender: {{user.gender}}</li>
+                <li class="list-group-item">Bio: {{user.bio}}</li>
+                <li class="list-group-item">Orientation: {{user.orientation}}</li>
+                <li class="list-group-item">Relationship Status: {{user.relationshipStatus}}</li>
+
+            </ul>
+
+            <div class="card-body">
+                <div class="row justify-content-center" *ngFor='let temp of myPosts'>
+                    <div *ngIf='temp.author.username==user.username'>
+                        <div class="card bg-light mb-3 text-center" style="width: 512px;" *ngIf='temp != undefined'>
+
+                            <h5 class="card-header text-left">
+                                <img src="{{temp.author.picture}}" style="max-width: 64px; max-height: 64px;" /> {{temp.author.firstname}} {{temp.author.lastname}}</h5>
+                            <div class="card-body">
+                                <p class="card-text">{{temp.body}}</p>
+                                <img src='{{temp.image}}' class="card-img-top mr-3" />
+                            </div>
+                            <div class="card-footer text-right">
+                                <footer class="blockquote-footer">
+                                    {{temp.timestamp}}
+                                    <br>likes: {{temp.likes.length}}
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- (click)='ProfileClick()' -->

@@ -1,0 +1,22 @@
+<app-profile-header></app-profile-header>
+
+<div class="container" *ngIf="hasProfilePic">
+    <app-newpost></app-newpost>
+    <app-postview></app-postview>
+</div>
+
+<div *ngIf="!hasProfilePic">  <!-- for if they don't have a profile picture-->
+    <div class="login-form text-center">
+        <h1 style="color: white">Please upload a profile image before continuing</h1>
+        <form action="http://localhost:8080/SocialMedia/profilePic" method="post" enctype="multipart/form-data">
+            
+            <div class="form-group">
+                <input type="file" name="profilepic" id="profilepic" onchange="loadFileTwo(event)">
+                <img  class="img-responsive" id="imgPreview">
+            </div>
+
+            <button type="submit" class="log-btn">Submit new profile pic</button>
+        </form>
+    </div>
+</div>
+    

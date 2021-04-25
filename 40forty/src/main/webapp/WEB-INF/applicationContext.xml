@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:apo="http://www.springframework.org/schema/aop"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+    <!--turn on context annotations-->
+    <context:annotation-config/>
+
+    <!--package scanning. YOu can use "example" to scan the "example" package and all subpackages-->
+    <context:component-scan base-package="example"/>
+
+    <!--turn on Spring ORM annotations-->
+<!--        <tx:annotation-driven/>-->
+    <tx:annotation-driven proxy-target-class="true"
+                          transaction-manager="transactionManager" />
+
+    <!--turn on Spring MVC annotations-->
+    <mvc:annotation-driven/>
+    <!-- aop   -->
+<!--    <aop:config proxy-target-class="true"/>-->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url"
+                  value="jdbc:postgresql://db40forty.cimqzwh2urdj.us-east-2.rds.amazonaws.com/db40forty"/>
+        <property name="username" value="teamzuko"/>
+        <property name="password" value="P4ssw0rd"/>
+    </bean>
+
+
+    <!--SESSION FACTORY
+        Session factory is an object that is responsible for creating HIbernate sessions
+    -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="example"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">
+                    org.hibernate.dialect.PostgreSQL82Dialect
+                </prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.format_sql">false</prop>
+                <!--we need whatever the default is, so commented this out-->
+                <!--Default is "none" so it won't reset tables on every startup-->
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <!--TRANSACTION MANAGER
+        This bean is responsible for managing your transactions (big surprise)
+        AND also manages our contextual sessions
+
+        What are contextual sessions (hibernate sessions)?
+        Sessions with information SPECIFIC to each user. They make it so that each user ONLY SEES
+        THEIR INFORMATION, not someone else's.
+    -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+</beans>

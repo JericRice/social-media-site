@@ -1,0 +1,15 @@
+<div class="row justify-content-center">
+    <input type='text' placeholder='Search Friends' [(ngModel)]='filter' />
+</div>
+
+<div *ngFor='let temp of filteredUsers'>
+    <div *ngIf='temp != undefined && temp.username !== currentUser.username'>
+
+        <a [routerLink]="['/profileInfo',temp | json]">
+            <h5 class="card-header text-left ">
+                <img src="{{temp.picture}} " style="max-width: 32px; max-height: 32px; " />{{temp.username}}</h5>
+        </a>
+    </div>
+</div>
+
+
